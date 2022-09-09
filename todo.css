@@ -32,7 +32,12 @@ text-align: center;
     display: flex;
     justify-content: center;
 }
-#btn{
+.row{
     margin-left: 30px;
     text-transform: lowercase;
+}
+.todo-list{
+    display: flex;
+    justify-content: center;
+    margin-right: 25%;
 }

@@ -2,25 +2,29 @@
 const todos = [];
 let count = 0;
  document.querySelector(".btn").addEventListener("click",function(){
-    let todo  = document.querySelector(".item").value;
-    const todoObj = {
-        completed : false,
-        id : ++count,
-        name : todo
-    };
-    todos.push(todoObj);
-    console.log(todos);
-    addTodos(todos)
-    removeTodos(todos);
+    let todo  = document.querySelector(".text").value;
+
+    console.log(todo)
+    if(todo  === ""){
+       alert('Todo is required')
+    }else{
+        const todoObj = {
+            completed : false,
+            id : ++count,
+            name : todo
+        };
+        todos.push(todoObj);
+        console.log(todos);
+        addTodos(todos)
+        removeTodos(todos); 
+    }
+
  });
  function  addTodos(list){
     let element = `<ul>`
     for(let i=0;i<list.length;i++){
         let item = list[i];
-        let li ='list'
-        let row = 'row'
-        element +=`<li class=${li}>${item.name}<button class=${row}>x</button></li>`
-
+        element +=`<li class=list>${item.name}<button class=row>x</button></li>`
     };
     element +=`</ul>`
     document.querySelector(".todo-list").innerHTML = element;
@@ -35,3 +39,4 @@ let count = 0;
         });
     };
  };
+ 
